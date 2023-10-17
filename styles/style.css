@@ -50,11 +50,14 @@ main {
   width: 100%;
 }
 
-.header__address {
-  justify-self: end;
+address {
   line-height: 24.3px;
   font-style: normal;
   width: 240px;
+}
+
+.header__address {
+  justify-self: end;
 }
 
 /* cover ---------------------------------------------------------------------*/
@@ -154,21 +157,27 @@ main {
   text-transform: uppercase;
 }
   
-.lots__card-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.lots__card-list {                   /* с grid'ом не понял как сделать, переделал на flex */
+  display: flex;
   gap: 25px;
-  list-style: none;
-  text-decoration: none;
+  flex-wrap: wrap;
+  list-style-type: none;
 }
-  
-.lost__card-list-item {
+
+.lots__card-list-item {
   flex-grow: 1;
+  min-height: 450px;
+  width: 430px;
 }
-  
+
 .card-link {
+  position: relative;
   display: block;
   height: 100%;
+  z-index: 1;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
   
 .card {
@@ -176,8 +185,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
-  width: auto;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -283,13 +290,6 @@ main {
   font-size: 18px;
 }
     
-.footer__address {
-  font-weight: 400;
-  line-height: 24.3px;
-  font-style: normal;
-  width: 240px;
-}
-
 .footer__menu-list {
   display: flex;
   flex-direction: column; 
@@ -301,11 +301,9 @@ main {
   text-decoration: none;
 }
 
-
 .footer__menu-list-item {
   list-style: none;
 }
-
 
 .footer__menu-link_active {
   border-bottom: none;
@@ -313,7 +311,6 @@ main {
 
 .footer__menu-link_active .footer__menu-link {
   text-decoration: none;
-  
 }
 
 .footer__social-list {
